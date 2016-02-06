@@ -1,0 +1,18 @@
+Source: roundcube-amacube
+Section: web
+Priority: extra
+Maintainer: Andreas Roth <aroth@arsoft-online.com>
+Build-Depends: debhelper (>= 9),
+               yui-compressor
+Standards-Version: 3.9.6
+Vcs-Git: https://github.com/aroth-arsoft/pkg-roundcube-amacube
+Vcs-Browser: https://github.com/aroth-arsoft/pkg-roundcube-amacube
+
+Package: roundcube-plugins-extra
+Architecture: all
+Depends: roundcube-amacube,
+         roundcube-core (>= 1.1.2),
+         ${misc:Depends}
+Description: Amavis plugin for roundcube
+ Roundcube plugin to let users control their amavis settings as 
+ well as manage quarantined emails.

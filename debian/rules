@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+
+%:
+	dh $@
+
+
+override_dh_fixperms:
+	dh_fixperms
+	find $(CURDIR)/$(INSTALL_PLUGIN_DIR) \
+		-type f -print0 | xargs -0 chmod -x
+
+override_dh_install:
+	# Install plugins
+	dh_install --exclude=COPYING --exclude=INSTALL --exclude=debian \
+		"./*" usr/share/roundcube/plugins/amacube
+
+	#Convert .js back to min.js
+	for js in $$(find $(CURDIR)/debian/roundcube-amacube -type f -name '*.js' -not -name '*.min.js' -print); do \
+		yui-compressor --type js "$$js" -o "$${js%.*}.min.js" ; \
+	done
+
+	# Plugins are in usr/share/roundcube/plugins, for each plugin
+	# if there is config.inc.php.dist, we symlink a config.inc.php
+	# in /etc/roundcube/plugins with some dummy content.
+	dh_link usr/share/roundcube/plugins/amacube \
+		var/lib/roundcube/plugins/amacube
+	
+	dh_installdirs etc/roundcube/plugins/amacube
+	dh_install debian/config.inc.php etc/roundcube/plugins/amacube
+	dh_link etc/roundcube/plugins/amacube/config.inc.php \
+		usr/share/roundcube/plugins/amacube/config.inc.php
+
+	dh_install
