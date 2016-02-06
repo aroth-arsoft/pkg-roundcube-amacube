@@ -1,3 +1,9 @@
+roundcube-amacube (0.2.1+git194b95d-0.2) wily; urgency=medium
+
+  * fixed config.inc.php to create $config array
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Sat, 06 Feb 2016 18:23:51 +0100
+
 roundcube-amacube (0.2.1+git194b95d-0.1) wily; urgency=medium
 
   * initial release

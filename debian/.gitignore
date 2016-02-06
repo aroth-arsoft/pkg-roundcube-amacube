@@ -1,0 +1,4 @@
+/roundcube-amacube/
+*.substvars
+*.debhelper.log
+/files
