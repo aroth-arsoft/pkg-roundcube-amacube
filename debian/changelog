@@ -1,3 +1,9 @@
+roundcube-amacube (0.2.1+git194b95d-0.3) wily; urgency=medium
+
+  * disable debug log 
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Wed, 17 Feb 2016 19:33:07 +0100
+
 roundcube-amacube (0.2.1+git194b95d-0.2) wily; urgency=medium
 
   * fixed config.inc.php to create $config array
