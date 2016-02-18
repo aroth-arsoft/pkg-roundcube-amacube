@@ -1,3 +1,9 @@
+roundcube-amacube (0.2.1+git194b95d-0.4) wily; urgency=medium
+
+  * add german translation
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Thu, 18 Feb 2016 06:53:48 +0100
+
 roundcube-amacube (0.2.1+git194b95d-0.3) wily; urgency=medium
 
   * disable debug log 
